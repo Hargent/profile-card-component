@@ -10,9 +10,14 @@ media query for centralizing the card
 	--Dark-gray: hsl(0, 0%, 59%);
 }
 @font-face {
-	font-family: Kumbh;
+	font-family: Kumbh-Sans-Regular;
 
-	src: url(./Fonts/Kumbh_Sans/KumbhSans-VariableFont_YOPQ\wght.ttf);
+	src: url(./Fonts/Kumbh_Sans/static/KumbhSans-Regular.ttf);
+}
+@font-face {
+	font-family: Kumbh-Sans-Bold;
+
+	src: url(./Fonts/Kumbh_Sans/static/KumbhSans-Bold.ttf);
 }
 * {
 	margin: 0;
@@ -25,12 +30,13 @@ html {
 }
 body {
 	box-sizing: inherit;
-	font-family: Kumbh-Sans;
+	font-family: Kumbh-Sans-Regular, sans-serif;
 
 	background-color: var(--Dark-cyan);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-transform: capitalize;
 
 	width: 100vw;
 	height: 100vh;
@@ -99,6 +105,8 @@ body {
 }
 .card__image > img {
 	border-radius: 50%;
+	border: 4px solid #ffffff;
+	outline: none;
 }
 .card__details {
 	display: flex;
@@ -107,7 +115,9 @@ body {
 	align-items: center;
 
 	width: 100%;
+	color: var(--Dark-gray);
 }
+
 .card__details::after {
 	margin-top: 2rem;
 	content: "";
@@ -130,6 +140,20 @@ body {
 
 	width: 100%;
 	padding: 0 2.5rem;
+}
+.card__rating > div {
+	text-align: center;
+}
+.card__details-name,
+.card__rating-figure {
+	font-family: Kumbh-Sans-Bold;
+	color: var(--Very-dark-desaturated-blue);
+	font-size: 1.125rem;
+}
+.card__rating-string {
+	color: var(--Dark-gray);
+	font-size: 0.625rem;
+	letter-spacing: 0.125rem;
 }
 .attribution {
 	font-size: 11px;
